@@ -166,7 +166,8 @@ function spawnEnemies() {
     clearInterval(spawnInterval); // Clear the previous interval
     if (!levelComplete && !gameOver && levelTimeRemaining > 0) {
         spawnInterval = setInterval(() => {
-            enemies.push(new Enemy());
+            if (!gameOver) {
+            enemies.push(new Enemy());}
         }, 1000 / enemySpawnRate);
     }
 }
