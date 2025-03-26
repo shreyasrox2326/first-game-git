@@ -260,7 +260,7 @@ function drawGrid() {
     ctx.strokeStyle = UI_COLOR;
     ctx.lineWidth = 1;
     if (isMobileDevice) {
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 2;
     }
     // Concentric Rings (every 1/8th radius)
     const numRings = 8;
