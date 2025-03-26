@@ -1,11 +1,12 @@
+document.body.style.zoom="50%"
+
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
-document.body.style.zoom = "50%"; // Zoom out to 80%
 let gameWidth = window.innerWidth;
 let gameHeight = window.innerHeight;
-canvas.width = gameWidth;
-canvas.height = gameHeight;
+canvas.width = gameWidth * 2;
+canvas.height = gameHeight * 2;
 
 let CENTER_X = gameWidth / 2;
 let CENTER_Y = gameHeight / 2;
@@ -21,8 +22,8 @@ let circleRadius;
 let textSidePadding = 30; // Increased padding for larger font
 
 function updateCanvasDimensions() {
-    gameWidth = window.innerWidth;
-    gameHeight = window.innerHeight;
+    gameWidth = window.innerWidth * 2 ;
+    gameHeight = window.innerHeight * 2 ;
     canvas.width = gameWidth;
     canvas.height = gameHeight;
     CENTER_X = gameWidth / 2;
@@ -386,7 +387,7 @@ spawnEnemies();
 shootBullets();
 
 window.addEventListener('mousemove', (event) => {
-    player.update(event.clientX, event.clientY);
+    player.update(event.clientX*2, event.clientY*2);
 });
 
 window.addEventListener('mousedown', (event) => {
