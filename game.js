@@ -245,7 +245,7 @@ function drawUI() {
     // Game Over Message
     if (gameOver) {
         const message = 'Game Over';
-        const restartMessage = 'Press Space to Restart';
+        const restartMessage = 'Press Space/Tap to Restart';
         const textWidth = ctx.measureText(message).width;
         ctx.font = `bold ${fontSize * 2}px Doto`;
         ctx.textAlign = 'center';
@@ -435,7 +435,11 @@ window.addEventListener('keydown', (event) => {
         resetGame();
     }
 });
-
+window.addEventListener('touchstart', () => {
+    if (gameOver) {
+        resetGame();
+    }
+});
 function resetGame() {
     player.lives = 9;
     totalEnemiesKilled = 0;
