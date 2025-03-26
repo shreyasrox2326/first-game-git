@@ -1,7 +1,7 @@
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
-
+document.body.style.zoom = "50%"; // Zoom out to 80%
 let gameWidth = window.innerWidth;
 let gameHeight = window.innerHeight;
 canvas.width = gameWidth;
