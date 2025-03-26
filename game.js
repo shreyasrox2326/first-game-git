@@ -385,19 +385,43 @@ animate();
 startLevelTimer(); // Start the initial level timer
 spawnEnemies();
 shootBullets();
+function isMobileDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
 
 window.addEventListener('mousemove', (event) => {
-    player.update(event.clientX*2, event.clientY*2);
+    player.update(event.clientX * 2, event.clientY * 2);
 });
 
 window.addEventListener('mousedown', (event) => {
-    if (event.button === 0) shooting = true;
-    shootBullets(); // Ensure shooting starts when mouse is down
+    if (event.button === 0) {
+        shooting = true;
+        shootBullets();
+    }
 });
 
 window.addEventListener('mouseup', (event) => {
-    if (event.button === 0) shooting = false;
-    // Stop shooting interval when mouse up
+    if (event.button === 0) {
+        shooting = false;
+        clearInterval(shootInterval);
+    }
+});
+
+// Touch Support: Start shooting when touching the screen
+window.addEventListener('touchstart', (event) => {
+    shooting = true;
+    shootBullets();
+});
+
+// Move Player on Touch
+window.addEventListener('touchmove', (event) => {
+    let touch = event.touches[0];
+    player.update(touch.clientX * 2, touch.clientY * 2);
+});
+
+// Stop Shooting When Finger is Lifted
+window.addEventListener('touchend', () => {
+    shooting = false;
     clearInterval(shootInterval);
 });
 
