@@ -197,7 +197,9 @@ function checkCollisions() {
         }
     }
 }
-
+document.getElementById('backToGamesBtn').addEventListener('click', () => {
+    window.location.href = 'https://ecellxcelerate.vercel.app/games';
+});
 function drawUI() {
     const fontSize = 20 * 3; // 3x the original size
     ctx.font = `bold ${fontSize}px Doto`;

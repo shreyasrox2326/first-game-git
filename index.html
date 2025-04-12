@@ -7,13 +7,31 @@
   body { margin: 0; background-color: #fcf4f1; overflow: hidden; }
   canvas { display: block; }
 </style>
+
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.5">
 <img id="playerImage" src="ecellpaglu-1.png" style="display: none;">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<button id="backToGamesBtn" style="
+position: absolute;
+bottom: 50px;
+left: 20px;
+z-index: 10;
+padding: 10px 20px;
+font-size: 58px;
+font-family: 'Doto', sans-serif;
+color: #8182e8;
+background-color: #007bff00;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+">
+⬅ Back to games
+</button>
 <body>
   <script src="game.js"></script>
+
 </body>
 </html>
