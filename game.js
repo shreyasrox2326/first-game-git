@@ -285,9 +285,9 @@ function drawGrid() {
         ctx.stroke();
     }
 }
-let enemyEmoji = '🐁'; // Your chosen enemy emoji
+let enemyEmoji = '🏢'; // Your chosen enemy emoji
 const enemySize = 60; // Adjust size as needed
-let bulletEmoji = '🐈'; // Your chosen bullet emoji
+let bulletEmoji = '✈️'; // Your chosen bullet emoji
 const bulletSize = 40; // Adjust size as needed
 
 function animate() {
